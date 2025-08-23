@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Learn to Steer: A comprehensive approach to learning steering behaviors in autonomous systems.">
-  <meta name="keywords" content="Learning, Steering, Autonomous Systems, Control">
+        content="Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation - A novel framework for improving spatial reasoning in text-to-image models.">
+  <meta name="keywords" content="Text-to-Image Generation, Spatial Reasoning, Diffusion Models, Cross-Attention Maps, Computer Vision">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Learn to Steer: Learning Steering Behaviors in Autonomous Systems</title>
+  <title>Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -18,7 +18,6 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -28,66 +27,26 @@
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#">
-        <span class="icon">
-          <i class="fas fa-home"></i>
-        </span>
-      </a>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Related Work
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="#">
-            Autonomous Navigation
-          </a>
-          <a class="navbar-item" href="#">
-            Learning Control
-          </a>
-          <a class="navbar-item" href="#">
-            Steering Systems
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Learn to Steer</h1>
+          <h1 class="title is-1 publication-title">Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">[Your Name]</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=xfyZ4HYAAAAJ&hl=en">Sapir Esther Yiflach</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">[Co-author 1]</a><sup>2</sup>,</span>
+              <a href="https://research.nvidia.com/person/yuval-atzmon">Yuval Atzmon</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="#">[Co-author 2]</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="#">[Co-author 3]</a><sup>1</sup>
+              <a href="https://chechiklab.biu.ac.il/~gal/">Gal Chechik</a><sup>1,2</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>[Your Institution],</span>
-            <span class="author-block"><sup>2</sup>[Co-author Institution],</span>
-            <span class="author-block"><sup>3</sup>[Co-author Institution]</span>
+            <span class="author-block"><sup>1</sup>Bar-Ilan University,</span>
+            <span class="author-block"><sup>2</sup>NVIDIA</span>
           </div>
 
           <div class="column has-text-centered">
@@ -105,40 +64,39 @@
                 <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
               </span>
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Images Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="teaser-figure">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <img src="./static/images/fig1_rot_cropped__NO_dashes.png" alt="Learn-to-Steer Spatial Orientations" style="width: 100%; height: auto;">
+              <p class="has-text-centered"><strong>a)</strong> Spatial Orientations</p>
+            </div>
+            <div class="column is-6">
+              <img src="./static/images/fig1b1c__2_3rels_cropped.png" alt="Learn-to-Steer Multiple Relations" style="width: 100%; height: auto;">
+              <p class="has-text-centered"><strong>b, c)</strong> Multiple Relations</p>
+            </div>
+          </div>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Learn-to-Steer</span> learns how spatial relationships are encoded in attention maps to guide generation. <strong>a)</strong> Correctly renders all four orientations (above/below/left/right). <strong>b, c)</strong> Handles complex scenes with <em>multiple spatial relationships</em> of up to 5 objects and 3 relations.
+        </h2>
       </div>
     </div>
   </div>
@@ -149,22 +107,8 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Learn to Steer enables autonomous systems to learn complex steering behaviors through data-driven approaches while maintaining natural and adaptive control.</h2>
+        <h2 class="title is-3">Learn-to-Steer enables text-to-image models to correctly represent spatial relationships through data-driven objectives rather than handcrafted losses.</h2>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Teaser Section -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="has-text-centered">
-        <img src="./static/images/teaser.jpg" alt="Learn to Steer Teaser" style="max-width: 100%; height: auto;">
-      </div>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Learn to Steer</span> generates natural steering behaviors that align with the intended control objectives.
-      </h2>
     </div>
   </div>
 </section>
@@ -174,35 +118,16 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Examples of Autonomous Steering with Learn to Steer</h2>
+        <h2 class="title is-3">Examples of Spatial Reasoning with Learn-to-Steer</h2>
         
         <div class="columns is-centered">
           <div class="column">
-            <img src="./static/images/urban_steering.jpg" alt="Urban Steering" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Urban Navigation</p>
+            <img src="./static/images/fig1_rot.jpg" alt="Spatial Orientations" style="width: 100%; height: auto;">
+            <p class="has-text-centered">Correctly renders all four orientations (above/below/left/right)</p>
           </div>
           <div class="column">
-            <img src="./static/images/offroad_steering.jpg" alt="Off-road Steering" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Off-road Terrain</p>
-          </div>
-          <div class="column">
-            <img src="./static/images/precision_steering.jpg" alt="Precision Steering" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Precision Control</p>
-          </div>
-        </div>
-        
-        <div class="columns is-centered">
-          <div class="column">
-            <img src="./static/images/adaptive_steering.jpg" alt="Adaptive Steering" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Adaptive Behavior</p>
-          </div>
-          <div class="column">
-            <img src="./static/images/trajectory_planning.jpg" alt="Trajectory Planning" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Trajectory Planning</p>
-          </div>
-          <div class="column">
-            <img src="./static/images/realtime_adaptation.jpg" alt="Real-time Adaptation" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Real-time Adaptation</p>
+            <img src="./static/images/fig1b1c__2_3rels.jpg" alt="Multiple Relations" style="width: 100%; height: auto;">
+            <p class="has-text-centered">Handles complex scenes with multiple spatial relationships</p>
           </div>
         </div>
       </div>
@@ -218,13 +143,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Despite significant advances in autonomous navigation, learning complex steering behaviors that adapt to diverse environments remains a fundamental challenge. This is crucial for various applications from urban driving to off-road exploration and precision robotics. Generating adaptive steering behaviors is fundamentally challenging because the learning system needs to maintain separate representations for different steering scenarios, even when they share similar characteristics, and then carry out global optimization during execution.
+            Text-to-image diffusion models can generate stunning visuals, yet they often fail at tasks children find trivial—like placing a dog to the right of a teddy bear rather than to the left. When combinations get more unusual—a giraffe above an airplane—these failures become even more pronounced. Existing methods attempt to fix these spatial reasoning failures through model fine-tuning or test-time optimization with handcrafted losses that are suboptimal. Rather than imposing our assumptions about spatial encoding, we propose learning these objectives directly from the model's internal representations.
           </p>
           <p>
-            To address adaptive steering generation, we first identify features within the learning model that can carry steering behavior information. We then use them to separate and classify different steering scenarios during the learning process and detect under-performance and over-fitting. We fix the latter by training a model that proposes optimal steering parameters for new scenarios, based on the learned behaviors from existing ones, and show how it can be used to guide autonomous navigation with natural steering control.
+            We introduce <span class="dnerf">Learn-to-Steer</span>, a novel framework that learns data-driven objectives for test-time optimization rather than handcrafting them. Our key insight is to train a lightweight classifier that decodes spatial relationships from the diffusion model's cross-attention maps, then deploy this classifier as a learned loss function during inference. Training such classifiers poses a surprising challenge: they can take shortcuts by detecting linguistic traces rather than learning true spatial patterns. We solve this with a dual-inversion strategy that enforces geometric understanding.
           </p>
           <p>
-            Our approach, <span class="dnerf">Learn to Steer</span>, does not depend on external sources to determine steering behavior, but rather uses the prior from the learning model itself, creating environment-dependent and task-dependent steering strategies. Evaluated on multiple benchmark datasets, we find that Learn to Steer strongly outperforms the steering accuracy of existing baselines.
+            Our method dramatically improves spatial accuracy: from 0.20 to 0.61 on FLUX.1-dev and from 0.07 to 0.54 on SD2.1 across standard benchmarks. Moreover, our approach generalizes to multiple relations and significantly improves accuracy.
           </p>
         </div>
       </div>
@@ -237,18 +162,18 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">How does Learn to Steer work?</h2>
+        <h2 class="title is-3">How does Learn-to-Steer work?</h2>
         
         <div class="columns is-centered">
           <div class="column">
-            <img src="./static/images/architecture.jpg" alt="Learn to Steer Architecture" style="width: 100%; height: auto;">
-            <h3 class="title is-4">Architecture of Learn to Steer</h3>
+            <img src="./static/images/architecture.jpg" alt="Learn-to-Steer Architecture" style="width: 100%; height: auto;">
+            <h3 class="title is-4">Architecture of Learn-to-Steer</h3>
           </div>
         </div>
         
         <div class="content has-text-justified">
           <p>
-            Our method, <span class="dnerf">Learn to Steer</span>, aims to enhance autonomous navigation systems to accurately produce intended steering behaviors for complex environmental scenarios. Our methodology involves a two-step process: initially, we learn natural steering patterns that specify how and when steering adjustments should occur. These patterns emerge naturally from the data-driven learning process. At the second step, we use these patterns as a blueprint to generate optimal steering commands.
+            Our method, <span class="dnerf">Learn-to-Steer</span>, aims to enhance text-to-image models to accurately produce intended spatial relationships for complex input prompts. Our methodology involves a two-step process: initially, we learn natural spatial patterns that specify how and when spatial relationships should occur. These patterns emerge naturally from the cross-attention maps during generation. At the second step, we use these patterns as a blueprint to generate optimal spatial arrangements.
           </p>
         </div>
       </div>
@@ -261,28 +186,28 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3">Identify "Steering Behavior" in Learning Models</h2>
+        <h2 class="title is-3">Identify "Spatial Relations" in Cross-Attention Maps</h2>
         <div class="content has-text-justified">
           <p>
-            While most layers do not exhibit separability at the behavior level, we notice that specific layers at specific timestamps tend to generate different features for different steering scenarios. Based on this finding, we select the attention features to serve as our behavior-level features.
+            While most layers do not exhibit separability at the relation level, we notice that specific layers at specific timestamps tend to generate different features for different spatial relationships. Based on this finding, we select the cross-attention features to serve as our relation-level features.
           </p>
         </div>
-        <img src="./static/images/behavior_identification.jpg" alt="Steering Behavior Identification" style="width: 100%; height: auto;">
+        <img src="./static/images/attention_analysis.jpg" alt="Cross-Attention Analysis" style="width: 100%; height: auto;">
       </div>
     </div>
     
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3">ReSteer - Natural Behavior Correction</h2>
+        <h2 class="title is-3">Relation Leakage Prevention</h2>
         <div class="content has-text-justified">
           <p>
-            To address under-performance issues, we train a reinforcement learning model to predict optimal steering parameters, represented as multi-dimensional control signals. To train our ReSteer model, we need a dataset of steering behavior pairs with similar and different scenarios that maintain the same environmental context.
+            To address the "relation leakage" problem where classifiers learn linguistic traces instead of spatial patterns, we implement a dual-inversion strategy. This approach forces the classifier to become invariant to linguistic artifacts and focus solely on the geometric patterns in the attention maps.
           </p>
           <p>
-            We begin with the empirical observation that slight variations in the steering parameters specified in the training data—while keeping the environment and task consistent—typically results in similar steering behaviors. This consistency is crucial as it allows us to generate a training dataset of behavior pairs where each pair has similar steering characteristics, differing by only the control parameters, thereby preserving the overall navigation strategy.
+            We begin with the empirical observation that spatial relationships can be detected from the model's internal representations when properly trained. This consistency is crucial as it allows us to generate a training dataset of spatial relation pairs where each pair has similar geometric characteristics, differing by only the spatial relationship, thereby preserving the overall object composition.
           </p>
         </div>
-        <img src="./static/images/resteer_architecture.jpg" alt="ReSteer Architecture" style="width: 100%; height: auto;">
+        <img src="./static/images/relation_leakage.jpg" alt="Relation Leakage Prevention" style="width: 100%; height: auto;">
       </div>
     </div>
   </div>
@@ -296,30 +221,15 @@
         <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-justified">
           <p>
-            We evaluated Learn to Steer against traditional PID control, Model Predictive Control, and other learning-based approaches. Our method successfully generates natural steering behaviors, while other methods struggle in some or all of the examples.
+            We evaluated Learn-to-Steer against traditional handcrafted losses, fine-tuning approaches, and other test-time optimization methods. Our method successfully generates correct spatial relationships, while other methods struggle in some or all of the examples.
           </p>
         </div>
         
         <div class="columns is-centered">
           <div class="column">
             <img src="./static/images/comparison_results.jpg" alt="Comparison Results" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Steering Behavior Comparison</p>
+            <p class="has-text-centered">Spatial Relationship Comparison</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Video Section -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="#"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -331,11 +241,11 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <p>If you find our work useful, please cite our paper:</p>
-    <pre><code>@article{learntosteer2024,
-  title={Learn to Steer: Learning Steering Behaviors in Autonomous Systems},
-  author={[Your Name] and [Co-author 1] and [Co-author 2] and [Co-author 3]},
-  journal={[Journal/Conference]},
-  year={2024},
+    <pre><code>@article{yiflach2025datadriven,
+  title={Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation},
+  author={Yiflach, Sapir Esther and Atzmon, Yuval and Chechik, Gal},
+  journal={WACV},
+  year={2026},
 }</code></pre>
   </div>
 </section>
