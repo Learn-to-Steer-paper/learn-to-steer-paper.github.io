@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placeholder Image Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .placeholder { 
+            width: 400px; 
+            height: 300px; 
+            border: 2px solid #333; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            margin: 20px 0;
+        }
+        .placeholder h3 { color: #666; text-align: center; }
+        button { 
+            padding: 10px 20px; 
+            margin: 10px; 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Placeholder Image Generator for Learn to Steer Project</h1>
+    <p>Use these placeholders until you have your actual project images:</p>
+    
+    <div class="placeholder">
+        <h3>Teaser Image<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'teaser.jpg')">Download Teaser</button>
+    
+    <div class="placeholder">
+        <h3>Urban Steering Results<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'urban_steering.jpg')">Download Urban</button>
+    
+    <div class="placeholder">
+        <h3>Off-road Steering Results<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'offroad_steering.jpg')">Download Off-road</button>
+    
+    <div class="placeholder">
+        <h3>Precision Steering Results<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'precision_steering.jpg')">Download Precision</button>
+    
+    <div class="placeholder">
+        <h3>Adaptive Steering Results<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'adaptive_steering.jpg')">Download Adaptive</button>
+    
+    <div class="placeholder">
+        <h3>Steering Performance<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'steering_performance.jpg')">Download Performance</button>
+    
+    <div class="placeholder">
+        <h3>Adaptive Control<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'adaptive_control.jpg')">Download Control</button>
+    
+    <div class="placeholder">
+        <h3>Trajectory Start<br>200x150</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'trajectory_start.jpg')">Download Start</button>
+    
+    <div class="placeholder">
+        <h3>Trajectory Middle<br>200x150</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'trajectory_mid.jpg')">Download Middle</button>
+    
+    <div class="placeholder">
+        <h3>Trajectory End<br>200x150</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'trajectory_end.jpg')">Download End</button>
+    
+    <div class="placeholder">
+        <h3>Real-time Adaptation<br>400x300</h3>
+    </div>
+    <button onclick="downloadImage(this.previousElementSibling, 'realtime_adaptation.jpg')">Download Adaptation</button>
+
+    <script>
+        function downloadImage(element, filename) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            if (filename.includes('trajectory')) {
+                canvas.width = 200;
+                canvas.height = 150;
+            } else {
+                canvas.width = 400;
+                canvas.height = 300;
+            }
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#f0f0f0');
+            gradient.addColorStop(1, '#e0e0e0');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add border
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(1, 1, canvas.width-2, canvas.height-2);
+            
+            // Add text
+            ctx.fillStyle = '#666';
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            let title = filename.replace('.jpg', '').replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            if (filename.includes('trajectory')) {
+                title = title.replace('Trajectory ', '');
+            }
+            
+            ctx.fillText(title, canvas.width/2, canvas.height/2);
+            ctx.fillText(canvas.width + 'x' + canvas.height, canvas.width/2, canvas.height/2 + 25);
+            
+            // Download
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>
+
