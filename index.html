@@ -233,12 +233,11 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="teaser-figure">
-          <div class="columns is-centered is-vcentered">
+          <!-- Desktop layout with divider -->
+          <div class="columns is-centered is-vcentered is-hidden-mobile">
             <!-- Left image -->
             <div class="column is-5">
               <img src="./static/images/fig1a_NO_letters__cropped.png" alt="Learn-to-Steer Spatial Orientations" style="width: 100%; height: auto;">
-              <!-- <p class="has-text-centered"><strong>a)</strong> Spatial Orientations</p> -->
-              <!-- <p class="has-text-centered">Spatial Orientations</p> -->
               <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Spatial Orientations</strong></p>
             </div>
 
@@ -250,10 +249,20 @@
             <!-- Right image -->
             <div class="column is-5">
               <img src="./static/images/fig1bc_NO_letters__cropped.png" alt="Learn-to-Steer Multiple Relations" style="width: 100%; height: auto;">
-              <!-- <p class="has-text-centered"><strong>b, c)</strong> Multiple Relations</p> -->
-              <!-- <p class="has-text-centered">Multiple Relations</p> -->
               <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Multiple Relations</strong></p>
+            </div>
+          </div>
 
+          <!-- Mobile layout without divider -->
+          <div class="is-hidden-tablet">
+            <div class="has-text-centered" style="margin-bottom: 2rem;">
+              <img src="./static/images/fig1a_NO_letters__cropped.png" alt="Learn-to-Steer Spatial Orientations" style="width: 100%; max-width: 400px; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Spatial Orientations</strong></p>
+            </div>
+            
+            <div class="has-text-centered">
+              <img src="./static/images/fig1bc_NO_letters__cropped.png" alt="Learn-to-Steer Multiple Relations" style="width: 100%; max-width: 400px; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Multiple Relations</strong></p>
             </div>
           </div>
         </div>
@@ -382,7 +391,8 @@
         <h2 class="title is-3">How does Learn-to-Steer work?</h2>
         
         <div class="architecture-figure">
-          <div class="columns is-centered is-vcentered">
+          <!-- Desktop layout with divider -->
+          <div class="columns is-centered is-vcentered is-hidden-mobile">
             <div class="column is-6">
               <img src="./static/images/training_pipeline.png" alt="Training Pipeline" style="width: 100%; height: auto;">
               <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Training Pipeline</strong></p>
@@ -395,8 +405,27 @@
               <div class="vertical-divider-architecture"></div>
             </div>
 
-            <div class="column is-8">
+            <div class="column is-6">
               <img src="./static/images/inference_pipeline.png" alt="Inference Pipeline" style="width: 100%; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Test-time Optimization Pipeline</strong></p>
+              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                During inference, we extract the relevant cross-attention maps when denoising z_t and evaluate their relationship using our trained relation classifier. We then update the latent noise with backpropagation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mobile layout without divider -->
+          <div class="is-hidden-tablet">
+            <div class="has-text-centered" style="margin-bottom: 2rem;">
+              <img src="./static/images/training_pipeline.png" alt="Training Pipeline" style="width: 100%; max-width: 500px; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Training Pipeline</strong></p>
+              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                Given a spatially-aligned image, we perform dual image inversion (positive and negative prompts) to prevent relation leakage. During denoising, we extract the relevant attention maps and use them to train our classifier.
+              </p>
+            </div>
+            
+            <div class="has-text-centered">
+              <img src="./static/images/inference_pipeline.png" alt="Inference Pipeline" style="width: 100%; max-width: 500px; height: auto;">
               <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Test-time Optimization Pipeline</strong></p>
               <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
                 During inference, we extract the relevant cross-attention maps when denoising z_t and evaluate their relationship using our trained relation classifier. We then update the latent noise with backpropagation.
