@@ -30,6 +30,118 @@
     .teaser-figure .columns {
       align-items: center;
     }
+    
+    /* Custom Carousel Styles */
+    .image-carousel {
+      position: relative;
+      margin: 2rem 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    .carousel-container {
+      position: relative;
+      width: 100%;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item {
+      min-width: 100%;
+      display: none;
+    }
+    
+    .carousel-item.active {
+      display: block;
+    }
+    
+    .examples-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 0.5rem;
+    }
+    
+    .example-item {
+      text-align: center;
+      flex: 1;
+      max-width: 800px;
+    }
+    
+    .example-title {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #363636;
+      font-weight: 600;
+    }
+    
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 10px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .carousel-nav {
+      position: absolute;
+      top: calc(50% - 15px);
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 20;
+      color: #3273dc;
+      font-weight: bold;
+    }
+    
+    .carousel-nav:hover {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-nav.prev {
+      left: 10px;
+    }
+    
+    .carousel-nav.next {
+      right: 10px;
+    }
+    
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+      gap: 10px;
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .dot.active {
+      background: #3273dc;
+    }
+    
+    .dot:hover {
+      background: #999;
+    }
   </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -37,6 +149,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  
 </head>
 <body>
 
@@ -118,7 +231,7 @@
           </div>
         </div>
 
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered" style="margin-top: 2rem;">
           <!-- option 1 -->
           <!-- <span class="dnerf">Learn-to-Steer</span> generates the correct spatial arrangement between the objects specified in the input prompt. -->
 
@@ -137,7 +250,7 @@
   </div>
 </section>
 
-<!-- Main Description -->
+<!-- Main Description
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -146,23 +259,67 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Examples Section -->
-<section class="section">
+<section class="section has-background-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Examples of Spatial Reasoning with Learn-to-Steer</h2>
+        <h2 class="title is-3">Examples of Text-to-Image Generation with Learn-to-Steer</h2>
         
-        <div class="columns is-centered">
-          <div class="column">
-            <img src="./static/images/fig1_rot_cropped__NO_dashes.png" alt="Spatial Orientations" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Correctly renders all four orientations (above/below/left/right)</p>
+        <!-- Image Carousel using Bulma classes like Make It Count -->
+        <div class="image-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="carousel-item active">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <!-- <h4 class="example-title">Spatial Reasoning Example 1</h4> -->
+                    <img src="./static/images/unified_qa__geneval_rank_1__row_1.png" alt="Spatial Reasoning Example 1">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <!-- <h4 class="example-title">Spatial Reasoning Example 2</h4> -->
+                    <img src="./static/images/unified_qa__geneval_rank_1__row_2.png" alt="Spatial Reasoning Example 2">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <!-- <h4 class="example-title">Spatial Reasoning Example 3</h4> -->
+                    <img src="./static/images/unified_qa__geneval_rank_1__row_3.png" alt="Spatial Reasoning Example 3">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <!-- <h4 class="example-title">Spatial Reasoning Example 4</h4> -->
+                    <img src="./static/images/unified_qa__geneval_rank_1__row_4.png" alt="Spatial Reasoning Example 4">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="column">
-            <img src="./static/images/fig1b1c__2_3rels_cropped.png" alt="Multiple Relations" style="width: 100%; height: auto;">
-            <p class="has-text-centered">Handles complex scenes with multiple spatial relationships</p>
+          
+          <!-- Navigation arrows - positioned on top of images -->
+          <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
+          <button class="carousel-nav next" onclick="moveCarousel(1)">›</button>
+          
+          <!-- Dots indicator -->
+          <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
           </div>
         </div>
       </div>
@@ -193,7 +350,7 @@
 </section>
 
 <!-- How it Works Section -->
-<section class="section">
+<section class="section has-background-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -249,7 +406,7 @@
 </section>
 
 <!-- Qualitative Results Section -->
-<section class="section">
+<section class="section has-background-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -316,6 +473,43 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Custom Carousel Functionality
+  let currentSlide = 0;
+  const totalSlides = 4;
+
+  function moveCarousel(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const items = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+
+    // Hide all items
+    items.forEach(item => item.classList.remove('active'));
+    
+    // Show current item
+    items[currentSlide].classList.add('active');
+
+    // Update dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+
+  // Initialize carousel
+  document.addEventListener('DOMContentLoaded', function() {
+    updateCarousel();
+  });
+</script>
 
 </body>
 </html>
