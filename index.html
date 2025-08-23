@@ -26,6 +26,13 @@
       margin: 0 auto;
       width: 2px;
     }
+
+    .vertical-divider-architecture {
+      border-left: 2px dashed #999;
+      height: 480px;
+      margin: 0 auto;
+      width: 2px;
+    }
     
     .teaser-figure .columns {
       align-items: center;
@@ -56,6 +63,15 @@
     
     .carousel-item.active {
       display: block;
+    }
+
+    /* Reduce vertical spacing between Examples and Abstract */
+    .examples-section {
+      padding-bottom: 1rem;  /* shrink bottom padding */
+    }
+
+    .abstract-section {
+      padding-top: 1rem;     /* shrink top padding */
     }
     
     .examples-row {
@@ -264,7 +280,7 @@
 
 
 <!-- Examples Section -->
-<section class="section has-background-light">
+<section class="section has-background-light examples-section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -338,7 +354,7 @@
 </section>
 
 <!-- Abstract Section -->
-<section class="section">
+<section class="section has-background-light abstract-section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -359,65 +375,78 @@
   </div>
 </section>
 
-<!-- How it Works Section -->
-<section class="section has-background-light">
+<!-- How it Works Section: vertical divider -->
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">How does Learn-to-Steer work?</h2>
         
-        <div class="columns is-centered">
-          <div class="column">
-            <img src="./static/images/architecture.jpg" alt="Learn-to-Steer Architecture" style="width: 100%; height: auto;">
-            <h3 class="title is-4">Architecture of Learn-to-Steer</h3>
+        <div class="architecture-figure">
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-6">
+              <img src="./static/images/training_pipeline.png" alt="Training Pipeline" style="width: 100%; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Training Pipeline</strong></p>
+              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                Given a spatially-aligned image, we perform dual image inversion (positive and negative prompts) to prevent relation leakage. During denoising, we extract the relevant attention maps and use them to train our classifier.
+              </p>
+            </div>
+
+            <div class="column is-narrow">
+              <div class="vertical-divider-architecture"></div>
+            </div>
+
+            <div class="column is-8">
+              <img src="./static/images/inference_pipeline.png" alt="Inference Pipeline" style="width: 100%; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Test-time Optimization Pipeline</strong></p>
+              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                During inference, we extract the relevant cross-attention maps when denoising z_t and evaluate their relationship using our trained relation classifier. We then update the latent noise with backpropagation.
+              </p>
+            </div>
           </div>
-        </div>
-        
-        <div class="content has-text-justified">
-          <p>
-            Our method, <span class="dnerf">Learn-to-Steer</span>, aims to enhance text-to-image models to accurately produce intended spatial relationships for complex input prompts. Our methodology involves a two-step process: initially, we learn natural spatial patterns that specify how and when spatial relationships should occur. These patterns emerge naturally from the cross-attention maps during generation. At the second step, we use these patterns as a blueprint to generate optimal spatial arrangements.
-          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technical Details Section
-<section class="section">
+
+<!-- How it Works Section -->
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column">
-        <h2 class="title is-3">Identify "Spatial Relations" in Cross-Attention Maps</h2>
-        <div class="content has-text-justified">
-          <p>
-            While most layers do not exhibit separability at the relation level, we notice that specific layers at specific timestamps tend to generate different features for different spatial relationships. Based on this finding, we select the cross-attention features to serve as our relation-level features.
-          </p>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">How does Learn-to-Steer work?</h2>
+        
+        <div class="architecture-figure">
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-8">
+              <img src="./static/images/training_pipeline.png" alt="Training Pipeline" style="width: 100%; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Training Pipeline</strong></p>
+              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                Given a spatially-aligned image, we perform dual image inversion (positive and negative prompts) to prevent relation leakage. During denoising, we extract the relevant attention maps and use them to train our classifier.
+              </p>
+            </div>
+          </div>
+
+          <div class="columns is-centered is-vcentered">
+            <div class="column is-9">
+              <img src="./static/images/inference_pipeline.png" alt="Inference Pipeline" style="width: 100%; height: auto;">
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Test-time Optimization Pipeline</strong></p>
+              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                During inference, we extract the relevant cross-attention maps when denoising z_t and evaluate their relationship using our trained relation classifier. We then update the latent noise with backpropagation.
+              </p>
+            </div>
+          </div>
         </div>
-        <img src="./static/images/attention_analysis.jpg" alt="Cross-Attention Analysis" style="width: 100%; height: auto;">
-      </div>
-    </div>
-    
-    <div class="columns is-centered">
-      <div class="column">
-        <h2 class="title is-3">Relation Leakage Prevention</h2>
-        <div class="content has-text-justified">
-          <p>
-            To address the "relation leakage" problem where classifiers learn linguistic traces instead of spatial patterns, we implement a dual-inversion strategy. This approach forces the classifier to become invariant to linguistic artifacts and focus solely on the geometric patterns in the attention maps.
-          </p>
-          <p>
-            We begin with the empirical observation that spatial relationships can be detected from the model's internal representations when properly trained. This consistency is crucial as it allows us to generate a training dataset of spatial relation pairs where each pair has similar geometric characteristics, differing by only the spatial relationship, thereby preserving the overall object composition.
-          </p>
-        </div>
-        <img src="./static/images/relation_leakage.jpg" alt="Relation Leakage Prevention" style="width: 100%; height: auto;">
       </div>
     </div>
   </div>
 </section> -->
 
+
 <!-- Qualitative Results Section -->
-<!-- <section class="section has-background-light"> -->
-<section class="section">
+<section class="section has-background-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -440,7 +469,7 @@
 </section>
 
 <!-- BibTeX Section -->
-<section class="section has-background-light" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <p>If you find our work useful, please cite our paper:</p>
