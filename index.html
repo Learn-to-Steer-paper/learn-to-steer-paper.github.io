@@ -22,7 +22,7 @@
   <style>
     .vertical-divider {
       border-left: 2px dashed #999;
-      height: 410px;
+      height: 450px;
       margin: 0 auto;
       width: 2px;
     }
@@ -87,48 +87,55 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     
-    .carousel-nav {
-      position: absolute;
-      top: calc(50% - 15px);
+    .carousel-nav{
+      position: absolute; 
+      top: calc(50% - 10px); 
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.95);
-      border: 2px solid rgba(255, 255, 255, 0.8);
+      width: 40px; 
+      height: 40px; 
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
+      background: rgba(255,255,255,.95);
+      border: 2px solid rgba(255,255,255,.8);
+      display: flex; 
+      align-items: center; 
+      justify-content: center; /* centers icon */
+      color: #4c4c4c; 
+      cursor: pointer; 
+      box-shadow: 0 4px 8px rgba(0,0,0,.3);
+      transition: all .3s ease; 
       z-index: 20;
-      color: #3273dc;
-      font-weight: bold;
+    }
+    .carousel-nav i{ 
+      font-size: 22px; 
+      line-height: 1; 
+      pointer-events:none; 
+    }
+    .carousel-nav:hover{ 
+      background:#fff; 
+      box-shadow:0 4px 8px rgba(0,0,0,.4); 
+      transform:translateY(-50%) scale(1.1);
     }
     
-    .carousel-nav:hover {
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      transform: translateY(-50%) scale(1.1);
-    }
     
     .carousel-nav.prev {
-      left: 10px;
+      left: 25px;
     }
     
     .carousel-nav.next {
-      right: 10px;
+      right: 25px;
     }
-    
+        
     .carousel-dots {
       display: flex;
       justify-content: center;
-      margin-top: 1.5rem;
-      gap: 10px;
+      align-items: center;
+      margin-top: 0.5rem;
+      gap: 8px;
     }
     
     .dot {
-      width: 12px;
-      height: 12px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #ccc;
       cursor: pointer;
@@ -136,7 +143,9 @@
     }
     
     .dot.active {
-      background: #3273dc;
+      width: 12px;
+      height: 12px;
+      background: #4c4c4c;
     }
     
     .dot:hover {
@@ -214,7 +223,8 @@
             <div class="column is-5">
               <img src="./static/images/fig1_rot_cropped__NO_dashes.png" alt="Learn-to-Steer Spatial Orientations" style="width: 100%; height: auto;">
               <!-- <p class="has-text-centered"><strong>a)</strong> Spatial Orientations</p> -->
-              <p class="has-text-centered">Spatial Orientations</p>
+              <!-- <p class="has-text-centered">Spatial Orientations</p> -->
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Spatial Orientations</strong></p>
             </div>
 
             <!-- Divider -->
@@ -226,7 +236,9 @@
             <div class="column is-5">
               <img src="./static/images/fig1b1c__2_3rels_cropped.png" alt="Learn-to-Steer Multiple Relations" style="width: 100%; height: auto;">
               <!-- <p class="has-text-centered"><strong>b, c)</strong> Multiple Relations</p> -->
-              <p class="has-text-centered">Multiple Relations</p>
+              <!-- <p class="has-text-centered">Multiple Relations</p> -->
+              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Multiple Relations</strong></p>
+
             </div>
           </div>
         </div>
@@ -250,16 +262,6 @@
   </div>
 </section>
 
-<!-- Main Description
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Learn-to-Steer enables text-to-image models to correctly represent spatial relationships through data-driven objectives rather than handcrafted losses.</h2>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- Examples Section -->
 <section class="section has-background-light">
@@ -311,9 +313,17 @@
           </div>
           
           <!-- Navigation arrows - positioned on top of images -->
-          <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
-          <button class="carousel-nav next" onclick="moveCarousel(1)">›</button>
+          <!-- <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
+          <button class="carousel-nav next" onclick="moveCarousel(1)">›</button> -->
           
+          <button class="carousel-nav prev" onclick="moveCarousel(-1)" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-nav next" onclick="moveCarousel(1)" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          
+
           <!-- Dots indicator -->
           <div class="carousel-dots">
             <span class="dot active" onclick="goToSlide(0)"></span>
@@ -373,7 +383,7 @@
   </div>
 </section>
 
-<!-- Technical Details Section -->
+<!-- Technical Details Section
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -403,10 +413,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Qualitative Results Section -->
-<section class="section has-background-light">
+<!-- <section class="section has-background-light"> -->
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -429,7 +440,7 @@
 </section>
 
 <!-- BibTeX Section -->
-<section class="section" id="BibTeX">
+<section class="section has-background-light" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <p>If you find our work useful, please cite our paper:</p>
