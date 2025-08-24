@@ -102,7 +102,7 @@
     
     .carousel-item img {
       width: 100%;
-      height: auto;
+      /*height: auto;*/
       border-radius: 8px;
       /*border: 10px solid white;*/
       border: 0px solid white;
@@ -306,91 +306,53 @@
         <div class="image-carousel">
           <div class="carousel-container">
             <div class="carousel-track">
-              <div class="carousel-item active">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_1.png" alt="Spatial Reasoning Example 1"> -->
-                    <img src="./static/images/uncurated_split/row_1.png" alt="Spatial Reasoning Example 1">
-                  </div>
-                </div>
-              </div>
-              
-              <div class="carousel-item">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_2.png" alt="Spatial Reasoning Example 2"> -->
-                    <img src="./static/images/uncurated_split/row_2.png" alt="Spatial Reasoning Example 2">
-                  </div>
-                </div>
-              </div>
-              
-              <div class="carousel-item">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_3.png" alt="Spatial Reasoning Example 3"> -->
-                    <img src="./static/images/uncurated_split/row_3.png" alt="Spatial Reasoning Example 3">
-                  </div>
-                </div>
-              </div>
-              
-              <div class="carousel-item">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_4.png" alt="Spatial Reasoning Example 4"> -->
-                    <img src="./static/images/uncurated_split/row_4.png" alt="Spatial Reasoning Example 4">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-              <div class="carousel-item">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <img src="./static/images/uncurated_split/row_5.png" alt="Spatial Reasoning Example 5">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-              <div class="carousel-item">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <img src="./static/images/uncurated_split/row_6.png" alt="Spatial Reasoning Example 6">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-              <div class="carousel-item">
-                <div class="examples-row">
-                  <div class="example-item">
-                    <img src="./static/images/uncurated_split/row_7.png" alt="Spatial Reasoning Example 7">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-          
-          <!-- Navigation arrows - positioned on top of images -->
-          <!-- <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
-          <button class="carousel-nav next" onclick="moveCarousel(1)">›</button> -->
-          
+              <div class="carousel-item active"><div class="examples-row"><div class="example-item">
+                  <img src="./static/images/uncurated_split/row_1.png" alt="Spatial Reasoning Example 1">
+              </div></div></div>
+        
+              <div class="carousel-item"><div class="examples-row"><div class="example-item">
+                <img src="./static/images/uncurated_split/row_2.png" alt="Spatial Reasoning Example 2">
+              </div></div></div>
+        
+              <div class="carousel-item"><div class="examples-row"><div class="example-item">
+                <img src="./static/images/uncurated_split/row_3.png" alt="Spatial Reasoning Example 3">
+              </div></div></div>
+        
+              <div class="carousel-item"><div class="examples-row"><div class="example-item">
+                <img src="./static/images/uncurated_split/row_4.png" alt="Spatial Reasoning Example 4">
+              </div></div></div>
+        
+              <div class="carousel-item"><div class="examples-row"><div class="example-item">
+                <img src="./static/images/uncurated_split/row_5.png" alt="Spatial Reasoning Example 5">
+              </div></div></div>
+        
+              <div class="carousel-item"><div class="examples-row"><div class="example-item">
+                <img src="./static/images/uncurated_split/row_6.png" alt="Spatial Reasoning Example 6">
+              </div></div></div>
+        
+              <div class="carousel-item"><div class="examples-row"><div class="example-item">
+                <img src="./static/images/uncurated_split/row_7.png" alt="Spatial Reasoning Example 7">
+              </div></div></div>
+            </div> <!-- /.carousel-track -->
+          </div>   <!-- /.carousel-container -->
+        
+          <!-- ONE set of nav buttons -->
           <button class="carousel-nav prev" onclick="moveCarousel(-1)" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true"></i>
           </button>
           <button class="carousel-nav next" onclick="moveCarousel(1)" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true"></i>
           </button>
-          
-
-          <!-- Dots indicator -->
+        
+          <!-- ONE dots row -->
           <div class="carousel-dots">
             <span class="dot active" onclick="goToSlide(0)"></span>
             <span class="dot" onclick="goToSlide(1)"></span>
             <span class="dot" onclick="goToSlide(2)"></span>
             <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+            <span class="dot" onclick="goToSlide(5)"></span>
+            <span class="dot" onclick="goToSlide(6)"></span>
           </div>
         </div>
       </div>
