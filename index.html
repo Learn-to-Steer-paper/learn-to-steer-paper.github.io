@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -73,6 +73,11 @@
     .abstract-section {
       padding-top: 1rem;     /* shrink top padding */
     }
+
+    .teaser-section {
+      padding-top: 0rem;     /* shrink top padding */
+      padding-bottom: 1rem;  /* shrink bottom padding */
+    }
     
     .examples-row {
       display: flex;
@@ -99,7 +104,8 @@
       width: 100%;
       height: auto;
       border-radius: 8px;
-      border: 10px solid white;
+      /*border: 10px solid white;*/
+      border: 0px solid white;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     
@@ -228,11 +234,24 @@
 </section>
 
 <!-- Teaser Images Section -->
-<section class="section">
+<section class="section teaser-section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="teaser-figure">
+          <!-- <h2 class="subtitle has-text-centered" style="margin-top: 2rem;"> -->
+          <h2 class="subtitle has-text-centered">
+            We present <strong><span class="dnerf">Learn-to-Steer</span></strong>, a test-time optimization method that 
+            generates correct spatial arrangements between objects in text-to-image generation. 
+            Rather than relying on handcrafted losses, our approach learns directly from attention maps to understand 
+            spatial relationships specified in prompts. Learn-to-Steer works across different diffusion architectures, 
+            including MMDiT. Finally, despite learning from single relations, it generalizes to combining several spatial 
+            relations within a single generated image.
+
+            <!-- option 2 -->
+            <!-- <span class="dnerf">Learn-to-Steer</span> generates the correct spatial arrangement between objects specified in the input prompt by learning a loss directly from attention maps. -->
+  
+          </h2>
           <!-- Desktop layout with divider -->
           <div class="columns is-centered is-vcentered is-hidden-mobile">
             <!-- Left image -->
@@ -266,21 +285,6 @@
             </div>
           </div>
         </div>
-
-        <h2 class="subtitle has-text-centered" style="margin-top: 2rem;">
-          <!-- option 1 -->
-          <!-- <span class="dnerf">Learn-to-Steer</span> generates the correct spatial arrangement between the objects specified in the input prompt. -->
-
-          <!-- option 2 -->
-          <span class="dnerf">Learn-to-Steer</span> generates the correct spatial arrangement between objects specified in the input prompt by learning a loss directly from attention maps.
-          
-          <!-- option 3 -->
-          <!-- <span class="dnerf">Learn-to-Steer</span> learns a loss from attention maps to generate the correct spatial arrangement between objects specified in the input prompt. -->
-          
-          <!-- option 4 -->
-          <!-- <span class="dnerf">Learn-to-Steer</span> generates objects in the correct spatial relations specified in the input prompt by learning a loss directly from attention maps. -->
-
-        </h2>
       </div>
     </div>
   </div>
@@ -293,16 +297,20 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Examples of Text-to-Image Generation with Learn-to-Steer</h2>
+
+        <p>
+          Uncurated image generation results from FLUX.1-dev with our method. 
+          Green boxes mark spatially-aligned images (per the <em>GenEval</em> benchmark), while red boxes mark misaligned ones.
+        </p>
         
-        <!-- Image Carousel using Bulma classes like Make It Count -->
         <div class="image-carousel">
           <div class="carousel-container">
             <div class="carousel-track">
               <div class="carousel-item active">
                 <div class="examples-row">
                   <div class="example-item">
-                    <!-- <h4 class="example-title">Spatial Reasoning Example 1</h4> -->
-                    <img src="./static/images/unified_qa__geneval_rank_1__row_1.png" alt="Spatial Reasoning Example 1">
+                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_1.png" alt="Spatial Reasoning Example 1"> -->
+                    <img src="./static/images/uncurated_split/row_1.png" alt="Spatial Reasoning Example 1">
                   </div>
                 </div>
               </div>
@@ -310,8 +318,8 @@
               <div class="carousel-item">
                 <div class="examples-row">
                   <div class="example-item">
-                    <!-- <h4 class="example-title">Spatial Reasoning Example 2</h4> -->
-                    <img src="./static/images/unified_qa__geneval_rank_1__row_2.png" alt="Spatial Reasoning Example 2">
+                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_2.png" alt="Spatial Reasoning Example 2"> -->
+                    <img src="./static/images/uncurated_split/row_2.png" alt="Spatial Reasoning Example 2">
                   </div>
                 </div>
               </div>
@@ -319,8 +327,8 @@
               <div class="carousel-item">
                 <div class="examples-row">
                   <div class="example-item">
-                    <!-- <h4 class="example-title">Spatial Reasoning Example 3</h4> -->
-                    <img src="./static/images/unified_qa__geneval_rank_1__row_3.png" alt="Spatial Reasoning Example 3">
+                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_3.png" alt="Spatial Reasoning Example 3"> -->
+                    <img src="./static/images/uncurated_split/row_3.png" alt="Spatial Reasoning Example 3">
                   </div>
                 </div>
               </div>
@@ -328,12 +336,41 @@
               <div class="carousel-item">
                 <div class="examples-row">
                   <div class="example-item">
-                    <!-- <h4 class="example-title">Spatial Reasoning Example 4</h4> -->
-                    <img src="./static/images/unified_qa__geneval_rank_1__row_4.png" alt="Spatial Reasoning Example 4">
+                    <!-- <img src="./static/images/unified_qa__geneval_rank_1__row_4.png" alt="Spatial Reasoning Example 4"> -->
+                    <img src="./static/images/uncurated_split/row_4.png" alt="Spatial Reasoning Example 4">
                   </div>
                 </div>
               </div>
             </div>
+
+              <div class="carousel-item">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <img src="./static/images/uncurated_split/row_5.png" alt="Spatial Reasoning Example 5">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <div class="carousel-item">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <img src="./static/images/uncurated_split/row_6.png" alt="Spatial Reasoning Example 6">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <div class="carousel-item">
+                <div class="examples-row">
+                  <div class="example-item">
+                    <img src="./static/images/uncurated_split/row_7.png" alt="Spatial Reasoning Example 7">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
           
           <!-- Navigation arrows - positioned on top of images -->
@@ -493,6 +530,15 @@
             </p>
           </div>
         </div>
+
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column">
+            <img src="./static/images/unified_qa__geneval_rank_1.png" alt="Unified Results" style="width: 100%; height: auto; border: 12px solid white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+            <p class="has-text-centered">
+              Comparisons with all four base models.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -547,7 +593,7 @@
 <script>
   // Custom Carousel Functionality
   let currentSlide = 0;
-  const totalSlides = 4;
+  const totalSlides = 7;
 
   function moveCarousel(direction) {
     currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
