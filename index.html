@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation - A novel framework for improving spatial reasoning in text-to-image models.">
+        content="Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation - A novel framework for improving spatial reasoning in text-to-image models.">
   <meta name="keywords" content="Text-to-Image Generation, Spatial Reasoning, Diffusion Models, Cross-Attention Maps, Computer Vision">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</title>
+  <title>Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -90,7 +90,7 @@
     .example-item {
       text-align: center;
       flex: 1;
-      max-width: 1200px;
+      max-width: 2500px;
     }
     
     .example-title {
@@ -195,7 +195,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</h1>
+          <h1 class="title is-1 publication-title">Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=xfyZ4HYAAAAJ&hl=en">Sapir Esther Yiflach</a><sup>1</sup>,</span>
@@ -299,14 +299,17 @@
 
 <!-- Examples Section -->
 <section class="section has-background-light examples-section">
-  <div class="container is-max-desktop">
+  <div class="container is-fluid">
+  <!-- <div class="container is-max-desktop"> -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Examples of Text-to-Image Generation with Learn-to-Steer</h2>
 
         <p>
-          Uncurated image generation results from FLUX.1-dev with our method. 
-          Green boxes mark spatially-aligned images (per the <em>GenEval</em> benchmark), while red boxes mark misaligned ones.
+          Learn-to-Steer consistently generates spatially aligned images.
+        </p>
+        <p>
+          Green boxes mark spatially aligned images (per the <em>GenEval</em> benchmark), while red boxes mark misaligned ones.
         </p>
         
         <div class="image-carousel">
@@ -443,41 +446,6 @@
   </div>
 </section>
 
-
-<!-- How it Works Section -->
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">How does Learn-to-Steer work?</h2>
-        
-        <div class="architecture-figure">
-          <div class="columns is-centered is-vcentered">
-            <div class="column is-8">
-              <img src="./static/images/training_pipeline.png" alt="Training Pipeline" style="width: 100%; height: auto;">
-              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Training Pipeline</strong></p>
-              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
-                Given a spatially-aligned image, we perform dual image inversion (positive and negative prompts) to prevent relation leakage. During denoising, we extract the relevant attention maps and use them to train our classifier.
-              </p>
-            </div>
-          </div>
-
-          <div class="columns is-centered is-vcentered">
-            <div class="column is-9">
-              <img src="./static/images/inference_pipeline.png" alt="Inference Pipeline" style="width: 100%; height: auto;">
-              <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Test-time Optimization Pipeline</strong></p>
-              <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
-                During inference, we extract the relevant cross-attention maps when denoising z_t and evaluate their relationship using our trained relation classifier. We then update the latent noise with backpropagation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
 <!-- Qualitative Results Section -->
 <section class="section has-background-light">
   <div class="container is-max-desktop">
@@ -491,7 +459,7 @@
         </div> -->
         
         <div class="columns is-centered">
-          <div class="column">
+          <div class="column is-15">
             <img src="./static/images/COMBINED__qa_dev_geneval_rank_1_2__qa_SD_2.1_geneval_rank_1_2.png" alt="Comparison Results" style="width: 100%; height: auto; border: 12px solid white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
             <p class="has-text-centered">
               We evaluated Learn-to-Steer against handcrafted losses and other test-time optimization methods. Our method successfully generates correct spatial relationships, while other methods struggle in all of the examples.
@@ -500,7 +468,7 @@
         </div>
 
         <div class="columns is-centered" style="margin-top: 1rem;">
-          <div class="column">
+          <div class="column is-15">
             <img src="./static/images/unified_qa__geneval_rank_1.png" alt="Unified Results" style="width: 100%; height: auto; border: 12px solid white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
             <p class="has-text-centered">
               Comparisons with all four base models.
@@ -518,7 +486,7 @@
     <h2 class="title">BibTeX</h2>
     <p>If you find our work useful, please cite our paper:</p>
     <pre><code>@article{yiflach2025datadriven,
-  title={Learn-to-Steer: Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation},
+  title={Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation},
   author={Yiflach, Sapir Esther and Atzmon, Yuval and Chechik, Gal},
   journal={arXiv preprint arXiv:TBD},
   year={2025},
