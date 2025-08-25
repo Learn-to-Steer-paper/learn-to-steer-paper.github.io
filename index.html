@@ -60,24 +60,26 @@
       min-width: 100%;
       display: none;
     }
+
+    .carousel-item img {
+      width: 100%;
+      border-radius: 8px;
+      /*border: 10px solid white;*/
+      border: 0px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
     
     .carousel-item.active {
       display: block;
     }
 
+    .examples-section {
+      padding-bottom: 1rem;  /* shrink bottom padding */
+    }
+
     /* Reduce vertical spacing between Examples and Abstract */
     .examples-section .column {
       max-width: 100%;  /* don’t let Bulma shrink it */
-      padding-bottom: 1rem;  /* shrink bottom padding */
-    }
-    
-    .abstract-section {
-      padding-top: 1rem;     /* shrink top padding */
-    }
-
-    .teaser-section {
-      padding-top: 0rem;     /* shrink top padding */
-      padding-bottom: 1rem;  /* shrink bottom padding */
     }
     
     .examples-row {
@@ -91,7 +93,16 @@
     .example-item {
       text-align: center;
       flex: 1;
-      max-width: 2500px;
+      max-width: 600px;
+    }
+    
+    .abstract-section {
+      padding-top: 1rem;     /* shrink top padding */
+    }
+
+    .teaser-section {
+      padding-top: 0rem;     /* shrink top padding */
+      padding-bottom: 1rem;  /* shrink bottom padding */
     }
     
     .example-title {
@@ -99,15 +110,6 @@
       margin-bottom: 1rem;
       color: #363636;
       font-weight: 600;
-    }
-    
-    .carousel-item img {
-      width: 200%;
-      height: 200%;
-      border-radius: 8px;
-      /*border: 10px solid white;*/
-      border: 0px solid white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     
     .carousel-nav{
@@ -140,13 +142,26 @@
     }
     
     .carousel-nav.prev {
-      left: -40px;
+      left: -30px;
     }
     
     .carousel-nav.next {
-      right: -40px;
+      right: -30px;
     }
-        
+
+    
+    /* Mobile landscape / small tablets: 720px–1023px */
+    @media (min-width: 720px) and (max-width: 1023.98px) {
+      .carousel-nav.prev { left: 20px; }
+      .carousel-nav.next { right: 20px; }
+    }
+
+    /* Desktop: >=1024px */
+    @media (min-width: 1024px) {
+      .carousel-nav.prev { left: 135px; }
+      .carousel-nav.next { right: 135px; }
+    }
+
     .carousel-dots {
       display: flex;
       justify-content: center;
@@ -300,47 +315,48 @@
 
 <!-- Examples Section -->
 <section class="section has-background-light examples-section">
-  <div class="container is-fluid">
-  <!-- <div class="container is-max-desktop"> -->
+  <!-- <div class="container is-fluid"> -->
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width"> -->
-      <div class="column">
+      <div class="column is-full-width">
+      <!-- <div class="column"> -->
         <h2 class="title is-3">Examples of Text-to-Image Generation with Learn-to-Steer</h2>
 
         <p>
-          Learn-to-Steer consistently generates spatially aligned images. 
-          Green boxes mark spatially aligned images (per the <em>GenEval</em> benchmark), while red boxes mark misaligned ones.
+          Uncurated results from Learn-to-Steer. The approach easily generates spatially aligned images. 
+          <!-- Green boxes mark spatially aligned images (per the <em>GenEval</em> benchmark), while red boxes mark misaligned ones. -->
+          Aligned images in green, misaligned in red (per the <em>GenEval</em> benchmark)
         </p>
         
         <div class="image-carousel">
           <div class="carousel-container">
             <div class="carousel-track">
               <div class="carousel-item active"><div class="examples-row"><div class="example-item">
-                  <img src="./static/images/uncurated_split/row_1.png" alt="Spatial Reasoning Example 1">
+                  <img src="./static/images/uncurated_split/row1_crop1.png" alt="Spatial Reasoning Example 1">
               </div></div></div>
         
               <div class="carousel-item"><div class="examples-row"><div class="example-item">
-                <img src="./static/images/uncurated_split/row_2.png" alt="Spatial Reasoning Example 2">
+                <img src="./static/images/uncurated_split/row2_crop1.png" alt="Spatial Reasoning Example 2">
               </div></div></div>
         
               <div class="carousel-item"><div class="examples-row"><div class="example-item">
-                <img src="./static/images/uncurated_split/row_3.png" alt="Spatial Reasoning Example 3">
+                <img src="./static/images/uncurated_split/row3_crop1.png" alt="Spatial Reasoning Example 3">
               </div></div></div>
         
               <div class="carousel-item"><div class="examples-row"><div class="example-item">
-                <img src="./static/images/uncurated_split/row_4.png" alt="Spatial Reasoning Example 4">
+                <img src="./static/images/uncurated_split/row4_crop1.png" alt="Spatial Reasoning Example 4">
               </div></div></div>
         
               <div class="carousel-item"><div class="examples-row"><div class="example-item">
-                <img src="./static/images/uncurated_split/row_5.png" alt="Spatial Reasoning Example 5">
+                <img src="./static/images/uncurated_split/row5_crop1.png" alt="Spatial Reasoning Example 5">
               </div></div></div>
         
               <div class="carousel-item"><div class="examples-row"><div class="example-item">
-                <img src="./static/images/uncurated_split/row_6.png" alt="Spatial Reasoning Example 6">
+                <img src="./static/images/uncurated_split/row6_crop1.png" alt="Spatial Reasoning Example 6">
               </div></div></div>
         
               <div class="carousel-item"><div class="examples-row"><div class="example-item">
-                <img src="./static/images/uncurated_split/row_7.png" alt="Spatial Reasoning Example 7">
+                <img src="./static/images/uncurated_split/row7_crop1.png" alt="Spatial Reasoning Example 7">
               </div></div></div>
             </div> <!-- /.carousel-track -->
           </div>   <!-- /.carousel-container -->
