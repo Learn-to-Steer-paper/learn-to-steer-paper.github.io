@@ -66,10 +66,11 @@
     }
 
     /* Reduce vertical spacing between Examples and Abstract */
-    .examples-section {
+    .examples-section .column {
+      max-width: 100%;  /* don’t let Bulma shrink it */
       padding-bottom: 1rem;  /* shrink bottom padding */
     }
-
+    
     .abstract-section {
       padding-top: 1rem;     /* shrink top padding */
     }
@@ -101,8 +102,8 @@
     }
     
     .carousel-item img {
-      width: 100%;
-      /*height: auto;*/
+      width: 200%;
+      height: 200%;
       border-radius: 8px;
       /*border: 10px solid white;*/
       border: 0px solid white;
@@ -302,13 +303,12 @@
   <div class="container is-fluid">
   <!-- <div class="container is-max-desktop"> -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
+      <!-- <div class="column is-full-width"> -->
+      <div class="column">
         <h2 class="title is-3">Examples of Text-to-Image Generation with Learn-to-Steer</h2>
 
         <p>
-          Learn-to-Steer consistently generates spatially aligned images.
-        </p>
-        <p>
+          Learn-to-Steer consistently generates spatially aligned images. 
           Green boxes mark spatially aligned images (per the <em>GenEval</em> benchmark), while red boxes mark misaligned ones.
         </p>
         
@@ -459,7 +459,7 @@
         </div> -->
         
         <div class="columns is-centered">
-          <div class="column is-15">
+          <div class="column">
             <img src="./static/images/COMBINED__qa_dev_geneval_rank_1_2__qa_SD_2.1_geneval_rank_1_2.png" alt="Comparison Results" style="width: 100%; height: auto; border: 12px solid white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
             <p class="has-text-centered">
               We evaluated Learn-to-Steer against handcrafted losses and other test-time optimization methods. Our method successfully generates correct spatial relationships, while other methods struggle in all of the examples.
@@ -468,7 +468,7 @@
         </div>
 
         <div class="columns is-centered" style="margin-top: 1rem;">
-          <div class="column is-15">
+          <div class="column">
             <img src="./static/images/unified_qa__geneval_rank_1.png" alt="Unified Results" style="width: 100%; height: auto; border: 12px solid white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
             <p class="has-text-centered">
               Comparisons with all four base models.
