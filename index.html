@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation - A novel framework for improving spatial reasoning in text-to-image models.">
+        content="Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image - A novel framework for improving spatial reasoning in text-to-image models.">
   <meta name="keywords" content="Text-to-Image Generation, Spatial Reasoning, Diffusion Models, Cross-Attention Maps, Computer Vision">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</title>
+  <title>Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -219,7 +219,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation</h1>
+          <h1 class="title is-1 publication-title">Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=xfyZ4HYAAAAJ&hl=en">Sapir Esther Yiflach</a><sup>1</sup>,</span>
@@ -250,15 +250,15 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <!-- <span class="link-block">
-                <a href="#"
+              <span class="link-block">
+                <a href="https://github.com/sapir1779/learn-to-steer"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
-              </span> -->
+              </span>
             </div>
           </div>
         </div>
@@ -444,7 +444,7 @@
             </div>
 
             <div class="column is-6">
-              <img src="./static/images/inference_pipeline.png" alt="Inference Pipeline" style="width: 100%; height: auto;">
+              <img src="./static/images/inference_pipeline_CR.png" alt="Inference Pipeline" style="width: 100%; height: auto;">
               <p class="has-text-centered" style="margin-top: 0.5rem;"><strong>Test-time Optimization Pipeline</strong></p>
               <p class="has-text-centered" style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
                 During inference, we extract the relevant cross-attention maps when denoising z_t and evaluate their relationship using our trained relation classifier. We then update the latent noise with backpropagation.
@@ -515,11 +515,12 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <p>If you find our work useful, please cite our paper:</p>
-    <pre><code>@article{yiflach2025datadriven,
-  title={Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image Generation},
+    <pre><code>@inproceedings{yiflach2026data,
+  title={Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image},
   author={Yiflach, Sapir Esther and Atzmon, Yuval and Chechik, Gal},
-  journal={arXiv preprint arXiv:2509.02295},
-  year={2025},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={3525--3535},
+  year={2026}
 }</code></pre>
   </div>
 </section>
